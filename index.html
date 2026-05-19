@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Historia Clínica Integral</title>
+
+<style>
+
+:root{
+    --azul:#0b3c5d;
+    --azulClaro:#328cc1;
+    --gris:#f4f7fb;
+    --borde:#dbe4ec;
+    --texto:#1f2937;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+body{
+    background:var(--gris);
+    padding:30px;
+}
+
+.documento{
+    max-width:1200px;
+    margin:auto;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 40px rgba(0,0,0,.08);
+}
+
+/* HEADER */
+
+.header{
+    background:linear-gradient(135deg,var(--azul),var(--azulClaro));
+    color:white;
+    padding:30px;
+}
+
+.header-top{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.logo{
+    width:100px;
+    height:100px;
+    background:white;
+    border-radius:50%;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:10px;
+}
+
+.info-hospital h1{
+    font-size:32px;
+    margin-bottom:5px;
+}
+
+.info-hospital p{
+    opacity:.95;
+}
+
+/* FORMULARIO */
+
+.formulario{
+    padding:35px;
+}
+
+.titulo{
+    margin-top:35px;
+    margin-bottom:20px;
+    padding-bottom:8px;
+    border-bottom:2px solid var(--borde);
+    color:var(--azul);
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.campo{
+    display:flex;
+    flex-direction:column;
+}
+
+.campo label{
+    margin-bottom:7px;
+    font-weight:bold;
+    color:#374151;
+}
+
+.campo input,
+.campo textarea,
+.campo select{
+    padding:13px;
+    border:1px solid var(--borde);
+    border-radius:10px;
+    font-size:15px;
+    transition:.3s;
+}
+
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus{
+    outline:none;
+    border-color:var(--azulClaro);
+    box-shadow:0 0 0 4px rgba(50,140,193,.15);
+}
+
+textarea{
+    resize:none;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+/* BOTÓN */
+
+.btn{
+    width:100%;
+    margin-top:35px;
+    padding:17px;
+    border:none;
+    border-radius:12px;
+    background:var(--azul);
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#072c44;
+}
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    padding:25px;
+    background:#fafafa;
+    border-top:1px solid var(--borde);
+    line-height:1.8;
+    color:#6b7280;
+    font-size:14px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    body{
+        padding:10px;
+    }
+
+    .header-top{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="documento">
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <div class="header-top">
+
+            <div class="logo">
+
+<img src="https://3.bp.blogspot.com/-TkM84bOpTQs/UGyXg1qrKuI/AAAAAAAABaw/vGwy6B9eAH0/s1600/LOGOTIPO+HOSPITAL+GENERAL+TIJUANA.jpg" alt="Logo Hospital General Tijuana" width="200" height="200">
+
+            </div>
+
+            <div class="info-hospital">
+
+                <h1>Hospital General San Gabriel</h1>
+
+                <p>Sistema Integral de Historia Clínica Digital</p>
+
+                <p>Departamento Médico y Registro Hospitalario</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FORMULARIO -->
+
+    <div class="formulario">
+
+        <!-- DATOS PERSONALES -->
+
+        <h2 class="titulo">Datos Personales del Paciente</h2>
+
+        <div class="grid">
+
+            <div class="campo">
+                <label>Nombre completo</label>
+                <input type="text" value="Juan Carlos Martínez López">
+            </div>
+
+            <div class="campo">
+                <label>Edad</label>
+                <input type="number" value="42">
+            </div>
+
+            <div class="campo">
+                <label>Sexo</label>
+                <select>
+                    <option selected>Masculino</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label>Fecha de nacimiento</label>
+                <input type="date" value="1984-03-12">
+            </div>
+
+            <div class="campo">
+                <label>CURP</label>
+                <input type="text" value="MALJ840312HDFRPN08">
+            </div>
+
+            <div class="campo">
+                <label>Número de expediente</label>
+                <input type="text" value="EXP-2026-00125">
+            </div>
+
+            <div class="campo">
+                <label>Teléfono</label>
+                <input type="tel" value="5512345678">
+            </div>
+
+            <div class="campo">
+                <label>Correo electrónico</label>
+                <input type="email" value="juanmartinez@email.com">
+            </div>
+
+            <div class="campo">
+                <label>Estado civil</label>
+                <select>
+                    <option selected>Casado</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label>Ocupación</label>
+                <input type="text" value="Ingeniero Civil">
+            </div>
+
+            <div class="campo full">
+                <label>Domicilio completo</label>
+                <textarea rows="3">Av. Reforma 245, Colonia Centro, Ciudad de México.</textarea>
+            </div>
+
+        </div>
+
+        <!-- ANTECEDENTES -->
+
+        <h2 class="titulo">Antecedentes Médicos</h2>
+
+        <div class="grid">
+
+            <div class="campo">
+                <label>Tipo de sangre</label>
+                <select>
+                    <option selected>O+</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label>Peso (kg)</label>
+                <input type="number" value="84">
+            </div>
+
+            <div class="campo">
+                <label>Estatura (cm)</label>
+                <input type="number" value="178">
+            </div>
+
+            <div class="campo">
+                <label>Presión arterial</label>
+                <input type="text" value="120/80">
+            </div>
+
+            <div class="campo">
+                <label>Frecuencia cardíaca</label>
+                <input type="text" value="76 lpm">
+            </div>
+
+            <div class="campo">
+                <label>Temperatura corporal</label>
+                <input type="text" value="36.5 °C">
+            </div>
+
+            <div class="campo full">
+                <label>Alergias conocidas</label>
+                <textarea rows="2">Alergia a penicilina.</textarea>
+            </div>
+
+            <div class="campo full">
+                <label>Enfermedades crónicas</label>
+                <textarea rows="2">Hipertensión arterial controlada.</textarea>
+            </div>
+
+            <div class="campo full">
+                <label>Medicamentos actuales</label>
+                <textarea rows="2">Losartán 50mg cada 24 horas.</textarea>
+            </div>
+
+            <div class="campo full">
+                <label>Antecedentes familiares</label>
+                <textarea rows="3">Padre con diabetes tipo 2. Madre con hipertensión.</textarea>
+            </div>
+
+        </div>
+
+        <!-- CONSULTA -->
+
+        <h2 class="titulo">Consulta Médica</h2>
+
+        <div class="grid">
+
+            <div class="campo full">
+                <label>Motivo de consulta</label>
+                <textarea rows="3">Dolor de cabeza frecuente y mareos leves desde hace una semana.</textarea>
+            </div>
+
+            <div class="campo full">
+                <label>Síntomas principales</label>
+                <textarea rows="3">Cefalea frontal, cansancio y episodios de presión elevada.</textarea>
+            </div>
+
+            <div class="campo full">
+                <label>Diagnóstico médico</label>
+                <textarea rows="3">Hipertensión arterial descontrolada.</textarea>
+            </div>
+
+            <div class="campo full">
+                <label>Tratamiento indicado</label>
+                <textarea rows="3">Ajuste de tratamiento antihipertensivo y control en 15 días.</textarea>
+            </div>
+
+            <div class="campo full">
+                <label>Observaciones adicionales</label>
+                <textarea rows="3">Se recomienda disminuir consumo de sal y monitorear presión diariamente.</textarea>
+            </div>
+
+        </div>
+
+        <button class="btn">
+            Guardar Historia Clínica
+        </button>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <p><strong>Hospital General San Gabriel</strong></p>
+
+        <p>Sistema Integral de Historia Clínica y Registro Médico</p>
+
+        <br>
+
+        <p>
+            <strong>Integrantes del equipo:</strong><br>
+            Andrés Holguín<br>
+            Galia Bujazan
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
